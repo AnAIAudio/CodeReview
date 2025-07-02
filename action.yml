@@ -35,7 +35,7 @@ runs:
           GITHUB_TOKEN: ${{ inputs.github_token }}
           LOCAL_AI_KEY: ${{ inputs.local_ai_key }}
       run: |
-        python3 client.py \
+        uv run python3 client.py \
           --github_token ${{ inputs.github_token }} \
           --repository ${{ inputs.repository }} \
           --pull_request_number ${{ inputs.pull_request_number }}

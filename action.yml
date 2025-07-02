@@ -28,7 +28,7 @@ runs:
       shell: bash
       run: |
         uv venv
-        uv pip install -r requirements.txt
+        uv sync --locked
     - name: Start Review
       shell: bash
       env:

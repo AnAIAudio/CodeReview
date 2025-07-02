@@ -1,5 +1,5 @@
 name: 'Auto Code Review'
-description: 'Automatically review code changes in pull requests using Claude API'
+description: 'Automatically review code changes in pull requests using Ollama API'
 inputs:
   github_token:
     description: 'GitHub token'
@@ -10,8 +10,8 @@ inputs:
   github_pull_request_number:
     description: 'Pull request number'
     required: true
-  claude_api_key:
-    description: 'Claude API key'
+  local_ai_key:
+    description: 'Ollma API key'
     required: true
 runs:
   using: "composite"
@@ -27,7 +27,7 @@ runs:
       shell: bash
       env:
           GITHUB_TOKEN: ${{ inputs.github_token }}
-          CLAUDE_API_KEY: ${{ inputs.claude_api_key }}
+          LOCAL_AI_KEY: ${{ inputs.local_ai_key }}
       run: |
         python3 client.py \
           --github_token ${{ inputs.github_token }} \

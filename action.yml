@@ -31,5 +31,5 @@ runs:
       run: |
         python3 client.py \
           --github_token ${{ inputs.github_token }} \
-          --repository ${{ inputs.github_repository }} \
-          --pull_request_number ${{ inputs.github_pull_request_number }}
+          --repository ${{ inputs.repository }} \
+          --pull_request_number ${{ inputs.pull_request_number }}

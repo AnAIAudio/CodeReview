@@ -20,7 +20,7 @@ This includes examining whether the code uses modules with serious security defe
 
 You must response with the following format.
 Here is an example of a code review format:
-```
+
 # Summary
 
 ## Diagnosis
@@ -61,7 +61,7 @@ Runtine Error 가능성이 있는 코드를 검사하며, 이 코드가 실행�
 - 관리자 페이지에 대한 접근을 제한하고, 강력한 인증 메커니즘을 구현하세요.
 - 사용자 입력에 대한 적절한 검증과 이스케이프 처리를 수행하세요.
 - 취약한 암호화 알고리즘을 강력한 최신 알고리즘으로 교체하세요.
-```
+
 
 You should ensure that all answers are in Korean.
 """

@@ -23,7 +23,7 @@
 1. Claude API 키 설정:
    - GitHub 리포지토리의 Settings > Secrets and variables > Actions로 이동합니다.
    - 'New repository secret'을 클릭합니다.
-   - 이름을 `CLAUDE_API_KEY`로 설정하고, 값에 실제 Claude API 키를 입력합니다.
+   - 이름을 `LOCAL_AI_KEY`로 설정하고, 값에 실제 LOCAL_AI 키를 입력합니다.
 
 2. GitHub Actions 권한 설정:
    - 리포지토리의 Settings > Actions > General로 이동합니다.

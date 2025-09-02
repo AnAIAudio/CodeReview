@@ -3,7 +3,7 @@ from response import ChatCompletionResponse
 
 
 def translate_local_llm(local_ai_key: str, content: str) -> str:
-    api_url = "https://ai.an-ai.ooo/api/chat/completions"
+    api_url = "https://ai.an-ai.ooo/ollamadirect/api/chat"
 
     headers = {
         "Authorization": f"Bearer {local_ai_key}",

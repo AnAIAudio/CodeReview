@@ -12,10 +12,15 @@ def translate_local_llm(local_ai_key: str, content: str) -> str:
     payload = {
         "model": "gpt-oss:120b",
         "messages": [{"role": "user", "content": content}],
+        "stream": False
     }
 
     response = httpx.post(api_url, headers=headers, json=payload, timeout=None)
     response.raise_for_status()
+    print(response.text)
     response_json = response.json()
     chat_completion = ChatCompletionResponse(**response_json)
     return chat_completion.collect_message_contents()
+
+if __name__ == "__main__":
+    print(translate_local_llm("sk-a7900e27ac934bc38d5596599fe45102", "Hello, how are you?"))

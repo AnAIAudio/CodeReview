@@ -1,18 +1,11 @@
 from pydantic import BaseModel
 from typing import List, Optional
-
+from datetime import datetime
 
 class Message(BaseModel):
     role: str
     content: str
-
-
-class Choice(BaseModel):
-    index: int
-    logprobs: Optional[dict]
-    finish_reason: str
-    message: Message
-
+    thinking: str
 
 class CompletionTokensDetails(BaseModel):
     reasoning_tokens: int
@@ -35,12 +28,17 @@ class Usage(BaseModel):
 
 
 class ChatCompletionResponse(BaseModel):
-    id: str
-    created: int
+    created_at: datetime
     model: str
-    choices: List[Choice]
-    object: str
-    usage: Usage
+    message: Message
+    done_reason: str
+    done: bool
+    total_duration: int
+    load_duration: int
+    prompt_eval_count: int
+    prompt_eval_duration: int
+    eval_count: int
+    eval_duration: int
 
     def collect_message_contents(self) -> str:
         """
@@ -48,8 +46,7 @@ class ChatCompletionResponse(BaseModel):
         하나의 문자열로 반환하는 함수
         """
         contents: List[str] = []
-        for choice in self.choices:
-            contents.append(choice.message.content)
+        contents.append(self.message.content)
 
         # 여러 Choice의 content를 '\n'로 이어붙여 하나의 문자열로 생성
         return "\n".join(contents)

@@ -5,7 +5,6 @@ from datetime import datetime
 class Message(BaseModel):
     role: str
     content: str
-    thinking: str
 
 class CompletionTokensDetails(BaseModel):
     reasoning_tokens: int

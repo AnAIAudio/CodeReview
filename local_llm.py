@@ -11,7 +11,7 @@ def translate_local_llm(local_ai_key: str, content: str) -> str:
             "Content-Type": "application/json",
         }
         payload = {
-            "model": "gemma3:4b",
+            "model": "gpt-oss:120b",
             "messages": [{"role": "user", "content": content}],
         }
 
